@@ -18,6 +18,7 @@ class TestPrint {
 //     Uint8List bytes = response.bodyBytes;
     bluetooth.isConnected.then((isConnected) {
       if (isConnected != null) {
+        print('Show this line when connected');
         bluetooth.printNewLine();
         bluetooth.printCustom("HEADER", 3, 1);
         bluetooth.printNewLine();
@@ -53,6 +54,9 @@ class TestPrint {
         bluetooth.printNewLine();
         bluetooth.printNewLine();
         bluetooth.paperCut();
+      }
+      else{
+        print('Show this line when not connected');
       }
     });
   }
